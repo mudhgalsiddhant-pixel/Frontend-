@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paintify</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #fce7f3);
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      color: #6d28d9;
+      font-size: 35px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    #myBox {
+      width: 300px;
+      height: 170px;
+      background-color: white;
+      color: #6d28d9;
+      border: 3px solid #8b5cf6;
+      border-radius: 20px;
+      margin: 25px auto;
+      font-size: 25px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      cursor: text;
+      word-break: break-word;
+      box-shadow: 0 5px 15px #999;
+    }
+
+    .main-controls {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #444;
+      cursor: pointer;
+      margin: 4px;
+    }
+
+    .f-btn {
+      padding: 9px 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #8b5cf6;
+      color: white;
+      margin: 4px;
+    }
+
+    .f-btn:hover {
+      background-color: #6d28d9;
+    }
+
+    h3 {
+      color: #6d28d9;
+    }
+
+    .reset {
+      padding: 10px 22px;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    .reset:hover {
+      background-color: #b91c1c;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>🎨 Paintify</h1>
+  <p>Create Your Own Colorful Name Plate!</p>
+
+  <div id="myBox" contenteditable="true">
+    Welcome to Paintify!
+  </div>
+
+  <div class="main-controls">
+
+    <div>
+      <h3>Box Color</h3>
+
+      <button class="circle" style="background: lightblue;"
+      onclick="changeBg('lightblue')"></button>
+
+      <button class="circle" style="background: pink;"
+      onclick="changeBg('pink')"></button>
+
+      <button class="circle" style="background: lightgreen;"
+      onclick="changeBg('lightgreen')"></button>
+
+      <button class="circle" style="background: orange;"
+      onclick="changeBg('orange')"></button>
+    </div>
+
+    <div>
+      <h3>Text Color</h3>
+
+      <button class="circle" style="background: black;"
+      onclick="changeText('black')"></button>
+
+      <button class="circle" style="background: red;"
+      onclick="changeText('red')"></button>
+
+      <button class="circle" style="background: blue;"
+      onclick="changeText('blue')"></button>
+
+      <button class="circle" style="background: purple;"
+      onclick="changeText('purple')"></button>
+    </div>
+
+    <div>
+      <h3>Font Style</h3>
+
+      <button class="f-btn"
+      onclick="changeFont('Arial')">Arial</button>
+
+      <button class="f-btn"
+      onclick="changeFont('Georgia')">Georgia</button>
+
+      <button class="f-btn"
+      onclick="changeFont('Verdana')">Verdana</button>
+
+      <button class="f-btn"
+      onclick="changeFont('Courier New')">Courier</button>
+    </div>
+
+  </div>
+
+  <button class="reset" onclick="resetBox()">
+    Reset Design
+  </button>
+
+  <script>
+
+    var box = document.getElementById("myBox");
+
+    function changeBg(colorName) {
+      box.style.backgroundColor = colorName;
+    }
+
+    function changeText(textColor) {
+      box.style.color = textColor;
+    }
+
+    function changeFont(fontName) {
+      box.style.fontFamily = fontName;
+    }
+
+    function resetBox() {
+      box.style.backgroundColor = "white";
+      box.style.color = "#6d28d9";
+      box.style.fontFamily = "Arial";
+      box.innerText = "Welcome to Paintify!";
+    }
+
+  </script>
+
+</body>
+</html>
